@@ -5,14 +5,15 @@ a pc heat verifier using arduino uno and oled screen(ssd1306)
 
 <p>image with app on use:</p>
 <div>
-    <img align=left alt="jpg" width="230px" height= "280"src="https://github.com/F1reFinger/F1reFinger/blob/main/.jpghttps://github.com/F1reFinger/pc-heat-check/blob/main/gauge.jpg"/>
+    <img align=left alt="jpg"src="https://github.com/F1reFinger/F1reFinger/blob/main/.jpghttps://github.com/F1reFinger/pc-heat-check/blob/main/gauge.jpg"/>
 </div>
-
+<br>
 <p>app in use showing int format</p>
 <div>
-    <img align=right alt="gif" width="230px" height= "280"src="https://github.com/F1reFinger/pc-heat-check/blob/main/normal.gif"/>
+    <img align=right alt="gif"src="https://github.com/F1reFinger/pc-heat-check/blob/main/normal.gif"/>
 </div>
+<br>
 <p>app in use showing float point format</p>
 <div>
-  <img align=right alt="gif" width="230px" height= "280"src="https://github.com/F1reFinger/pc-heat-check/blob/main/float-point.gif"/>
+  <img align=right alt="gif"src="https://github.com/F1reFinger/pc-heat-check/blob/main/float-point.gif"/>
 </div>
