@@ -1,11 +1,12 @@
+// Make sure you have this libraries installed
 #include <Wire.h> 
 #include <string.h>
-//#include <SPI.h>
+//#include <SPI.h> use this library when using esp32
 #include <String.h>
 #include <U8glib.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-//#include "SSD1306Wire.h" 
+//#include "SSD1306Wire.h" use this library when using esp32
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
@@ -13,7 +14,7 @@
 #define SCREEN_ADDRESS 0x3C ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
 
 
-#define OLED_RESET -1  // GPIO0
+#define OLED_RESET -1  // -1 is when the reset pin is shared with arduino internal reset
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 int xcenter=SCREEN_WIDTH/2;                             // center of x-axis
@@ -50,10 +51,11 @@ void ISR1(){
 }
 
 void setup() {
-  pinMode(pin2, INPUT);
-  attachInterrupt(digitalPinToInterrupt(pin2), ISR1, FALLING);
-  //Wire.begin(21, 22);
-  Serial.begin(9600);
+  pinMode(pin2, INPUT);//button pin
+  attachInterrupt(digitalPinToInterrupt(pin2), ISR1, FALLING);// selection value will change to float point or int 
+  //Wire.begin(21, 22);// use this to set pin data/clock on esp32 check your board datasheet 
+  Serial.begin(9600);// use 9600 on arduino uno on esp use 11500
+  
   u8g.setFont(u8g_font_chikita);
   u8g.setColorIndex(1);                         // Instructs the display to draw with a pixel on.
 
@@ -112,7 +114,7 @@ void loop() {
        if(select == 1){
          recieved = Serial.read();
          brabo += recieved;
-         recieved = Serial.read();
+         recieved = Serial.read();  // this part is to show heatness witout float point
          brabo += recieved;
          brabo = brabo*10;
          w = map(brabo,0,1023,0,100);  // map it between 0 and 100
@@ -123,7 +125,7 @@ void loop() {
          recieved = Serial.read();
          dois += recieved;
          recieved = Serial.read();
-         dois += recieved;
+         dois += recieved; // this show with float point 
          dois = dois*100;
          w = map(dois,0,1023,0,100);  // map it between 0 and 100
          m = map(dois,0,1023,0,90);   // map needle movement
