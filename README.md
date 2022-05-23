@@ -8,12 +8,12 @@ a pc heat verifier using arduino uno and oled screen(ssd1306)
     <img alt="jpg"src="https://github.com/F1reFinger/pc-heat-check/blob/main/gauge.jpg"/>
 </div>
 <br>
-<p>app in use showing cpu+gpu in int format</p>
-<div>
+<p align="center">app in use showing cpu+gpu in int format</p>
+<div align="center">
     <img alt="gif"src="https://github.com/F1reFinger/pc-heat-check/blob/main/normal.gif"/>
 </div>
 <br>
-<p>app in use showing cpu+gpu in float point format</p>
-<div>
+<p align="center">app in use showing cpu+gpu in float point format</p>
+<div align="center">
   <img alt="gif"src="https://github.com/F1reFinger/pc-heat-check/blob/main/float-point.gif"/>
 </div>
